@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandudwicahyo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="container">
+    <h2 class="text-center">Login Billing</h2>
+    <form id="loginForm" onsubmit="return login(event)">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+    <div id="message" class="mt-3 text-center"></div>
+<script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'Pandu' && password === 'admin') {
+                document.getElementById('message').innerHTML = '<div class="alert alert-success">Login Sukses!</div>';
+                document.getElementById('loginForm').reset();
+            } else {
+                document.getElementById('message').innerHTML = '<div class="alert alert-danger">Username atau Password!</div>';
+            }
+        }
+</script>
+</body>
+</html>
